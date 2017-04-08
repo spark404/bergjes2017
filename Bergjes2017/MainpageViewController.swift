@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  MainpageViewController.swift
 //  Bergjes2017
 //
 //  Created by Hugo Trippaers on 29/03/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class MainpageViewController: UIViewController {
     
     @IBOutlet var qrCode: UILabel?;
 
@@ -16,7 +16,7 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         let notificationName = Notification.Name("NotificationIdentifier")
-        NotificationCenter.default.addObserver(self, selector: #selector(FirstViewController.handleNotification), name: notificationName, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MainpageViewController.handleNotification), name: notificationName, object: nil)
 
     }
     

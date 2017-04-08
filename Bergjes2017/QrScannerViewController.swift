@@ -1,5 +1,5 @@
 //
-//  SecondViewController.swift
+//  QrScannerViewController.swift
 //  Bergjes2017
 //
 //  Created by Hugo Trippaers on 29/03/2017.
@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class SecondViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
+class QrScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     var captureSession:AVCaptureSession?
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
@@ -52,16 +52,27 @@ class SecondViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
         videoPreviewLayer?.frame = view.layer.bounds
         view.layer.addSublayer(videoPreviewLayer!)
         
-        // Start video capture.
-        captureSession?.startRunning()
-        
         // Initialize QR Code Frame to highlight the QR code
         qrCodeFrameView = UIView()
-        qrCodeFrameView?.layer.borderColor = UIColor.green.cgColor
-        qrCodeFrameView?.layer.borderWidth = 2
-        view.addSubview(qrCodeFrameView!)
-        view.bringSubview(toFront: qrCodeFrameView!)
         
+        if let qrCodeFrameView = qrCodeFrameView {
+            qrCodeFrameView.layer.borderColor = UIColor.green.cgColor
+            qrCodeFrameView.layer.borderWidth = 2
+            view.addSubview(qrCodeFrameView)
+            view.bringSubview(toFront: qrCodeFrameView)
+        }
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("Starting the capture session")
+        captureSession?.startRunning()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("Stopping the capture layer")
+        // Remove the video capture layer
+        captureSession?.stopRunning()
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,8 +83,7 @@ class SecondViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
         // Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects == nil || metadataObjects.count == 0 {
-            //qrCodeFrameView?.frame = CGRectZero
-            //messageLabel.text = "No QR code is detected"
+            qrCodeFrameView?.frame = CGRect.zero
             return
         }
         
@@ -86,17 +96,15 @@ class SecondViewController: UIViewController, AVCaptureMetadataOutputObjectsDele
             qrCodeFrameView?.frame = barCodeObject.bounds;
             
             if metadataObj.stringValue != nil {
-                print(metadataObj.stringValue)
-                //messageLabel.text = metadataObj.stringValue
-                captureSession?.stopRunning()
-                videoPreviewLayer?.removeFromSuperlayer()
-                qrCodeFrameView?.removeFromSuperview()
-                let notificationName = Notification.Name("NotificationIdentifier")
-                NotificationCenter.default.post(name: notificationName, object: metadataObj.stringValue)
-                tabBarController?.selectedIndex = 0
+                sendNotification(qrcodeText: metadataObj.stringValue)
             }
         }
-        
+    }
+    
+    func sendNotification(qrcodeText: String) {
+        let notificationName = Notification.Name("NotificationIdentifier")
+        NotificationCenter.default.post(name: notificationName, object: qrcodeText)
+        tabBarController?.selectedIndex = 0
     }
 
 }
