@@ -15,6 +15,12 @@
 		9A2BDEEA1E8C43860025FB1E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A2BDEE81E8C43860025FB1E /* LaunchScreen.storyboard */; };
 		9A2BDEF51E8C43860025FB1E /* Bergjes2017Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BDEF41E8C43860025FB1E /* Bergjes2017Tests.swift */; };
 		9A2BDF001E8C43870025FB1E /* Bergjes2017UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BDEFF1E8C43870025FB1E /* Bergjes2017UITests.swift */; };
+		9A2BDF0E1E8C4ABD0025FB1E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BDF0D1E8C4ABD0025FB1E /* TabBarController.swift */; };
+		9AF67FF61E9936D100D42E17 /* NewChickenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF67FF51E9936D100D42E17 /* NewChickenViewController.swift */; };
+		9AF67FF91E99392800D42E17 /* GrondstoffenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF67FF81E99392800D42E17 /* GrondstoffenController.swift */; };
+		9AF67FFD1E993CF500D42E17 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF67FFB1E993CF500D42E17 /* Fabric.framework */; };
+		9AF67FFE1E993CF600D42E17 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF67FFC1E993CF500D42E17 /* Crashlytics.framework */; };
+		9AF680001E9948B800D42E17 /* VragenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF67FFF1E9948B800D42E17 /* VragenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		9A2BDEFB1E8C43870025FB1E /* Bergjes2017UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Bergjes2017UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2BDEFF1E8C43870025FB1E /* Bergjes2017UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bergjes2017UITests.swift; sourceTree = "<group>"; };
 		9A2BDF011E8C43870025FB1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A2BDF0D1E8C4ABD0025FB1E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9AF67FF51E9936D100D42E17 /* NewChickenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChickenViewController.swift; sourceTree = "<group>"; };
+		9AF67FF81E99392800D42E17 /* GrondstoffenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrondstoffenController.swift; sourceTree = "<group>"; };
+		9AF67FFB1E993CF500D42E17 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		9AF67FFC1E993CF500D42E17 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		9AF67FFF1E9948B800D42E17 /* VragenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VragenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AF67FFE1E993CF600D42E17 /* Crashlytics.framework in Frameworks */,
+				9AF67FFD1E993CF500D42E17 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +97,8 @@
 				9A2BDEF31E8C43860025FB1E /* Bergjes2017Tests */,
 				9A2BDEFE1E8C43870025FB1E /* Bergjes2017UITests */,
 				9A2BDEDB1E8C43860025FB1E /* Products */,
+				9AF67FFB1E993CF500D42E17 /* Fabric.framework */,
+				9AF67FFC1E993CF500D42E17 /* Crashlytics.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,9 +115,8 @@
 		9A2BDEDC1E8C43860025FB1E /* Bergjes2017 */ = {
 			isa = PBXGroup;
 			children = (
+				9AF67FF71E9938E900D42E17 /* Controllers */,
 				9A2BDEDD1E8C43860025FB1E /* AppDelegate.swift */,
-				9A2BDEDF1E8C43860025FB1E /* FirstViewController.swift */,
-				9A2BDEE11E8C43860025FB1E /* SecondViewController.swift */,
 				9A2BDEE31E8C43860025FB1E /* Main.storyboard */,
 				9A2BDEE61E8C43860025FB1E /* Assets.xcassets */,
 				9A2BDEE81E8C43860025FB1E /* LaunchScreen.storyboard */,
@@ -128,6 +143,19 @@
 			path = Bergjes2017UITests;
 			sourceTree = "<group>";
 		};
+		9AF67FF71E9938E900D42E17 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9AF67FF51E9936D100D42E17 /* NewChickenViewController.swift */,
+				9A2BDF0D1E8C4ABD0025FB1E /* TabBarController.swift */,
+				9A2BDEE11E8C43860025FB1E /* SecondViewController.swift */,
+				9A2BDEDF1E8C43860025FB1E /* FirstViewController.swift */,
+				9AF67FF81E99392800D42E17 /* GrondstoffenController.swift */,
+				9AF67FFF1E9948B800D42E17 /* VragenViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +166,7 @@
 				9A2BDED61E8C43860025FB1E /* Sources */,
 				9A2BDED71E8C43860025FB1E /* Frameworks */,
 				9A2BDED81E8C43860025FB1E /* Resources */,
+				9AF67FFA1E993CCA00D42E17 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -197,7 +226,7 @@
 					9A2BDED91E8C43860025FB1E = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 832NCTF3R5;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					9A2BDEEF1E8C43860025FB1E = {
 						CreatedOnToolsVersion = 8.3;
@@ -260,14 +289,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9AF67FFA1E993CCA00D42E17 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 2ab9135fcf8e12ae6fcab2df3d46bfbd8d4c093b be70527408c5d83be0352e71b40d752a1568a4d3e0900b4a2dfc23b8b0e029a5";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9A2BDED61E8C43860025FB1E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AF67FF91E99392800D42E17 /* GrondstoffenController.swift in Sources */,
 				9A2BDEE21E8C43860025FB1E /* SecondViewController.swift in Sources */,
+				9A2BDF0E1E8C4ABD0025FB1E /* TabBarController.swift in Sources */,
 				9A2BDEDE1E8C43860025FB1E /* AppDelegate.swift in Sources */,
 				9A2BDEE01E8C43860025FB1E /* FirstViewController.swift in Sources */,
+				9AF67FF61E9936D100D42E17 /* NewChickenViewController.swift in Sources */,
+				9AF680001E9948B800D42E17 /* VragenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,10 +469,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 832NCTF3R5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Bergjes2017/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.strocamp.Bergjes2017;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "bce85eb2-331a-453e-baf6-aa125b1ecdf9";
+				PROVISIONING_PROFILE_SPECIFIER = Bergjes2017Development;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -433,10 +489,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 832NCTF3R5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Bergjes2017/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.strocamp.Bergjes2017;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "bce85eb2-331a-453e-baf6-aa125b1ecdf9";
+				PROVISIONING_PROFILE_SPECIFIER = Bergjes2017Development;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -518,6 +581,7 @@
 				9A2BDF061E8C43870025FB1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A2BDF071E8C43870025FB1E /* Build configuration list for PBXNativeTarget "Bergjes2017Tests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +590,7 @@
 				9A2BDF091E8C43870025FB1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9A2BDF0A1E8C43870025FB1E /* Build configuration list for PBXNativeTarget "Bergjes2017UITests" */ = {
 			isa = XCConfigurationList;
@@ -534,6 +599,7 @@
 				9A2BDF0C1E8C43870025FB1E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

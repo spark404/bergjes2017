@@ -9,10 +9,19 @@
 import UIKit
 
 class FirstViewController: UIViewController {
+    
+    @IBOutlet var qrCode: UILabel?;
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let notificationName = Notification.Name("NotificationIdentifier")
+        NotificationCenter.default.addObserver(self, selector: #selector(FirstViewController.handleNotification), name: notificationName, object: nil)
+
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -20,6 +29,10 @@ class FirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func handleNotification(withNotification notification : NSNotification) {
+        print("Received " + (notification.object as! String))
+        qrCode?.text = notification.object as? String
+    }
 
 }
 
