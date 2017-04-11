@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CC2B327156A2260438C9B49 /* Pods_Bergjes2017.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7769AE3F410EE4B76E9A5D4A /* Pods_Bergjes2017.framework */; };
 		9A2BDEDE1E8C43860025FB1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BDEDD1E8C43860025FB1E /* AppDelegate.swift */; };
 		9A2BDEE01E8C43860025FB1E /* MainpageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BDEDF1E8C43860025FB1E /* MainpageViewController.swift */; };
 		9A2BDEE21E8C43860025FB1E /* QrScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BDEE11E8C43860025FB1E /* QrScannerViewController.swift */; };
@@ -16,6 +17,7 @@
 		9A2BDEF51E8C43860025FB1E /* Bergjes2017Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BDEF41E8C43860025FB1E /* Bergjes2017Tests.swift */; };
 		9A2BDF001E8C43870025FB1E /* Bergjes2017UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BDEFF1E8C43870025FB1E /* Bergjes2017UITests.swift */; };
 		9A2BDF0E1E8C4ABD0025FB1E /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2BDF0D1E8C4ABD0025FB1E /* TabBarController.swift */; };
+		9A8A4DB01E9C07CA00F62026 /* WrongScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A4DAF1E9C07CA00F62026 /* WrongScanController.swift */; };
 		9AF67FF61E9936D100D42E17 /* NewChickenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF67FF51E9936D100D42E17 /* NewChickenViewController.swift */; };
 		9AF67FF91E99392800D42E17 /* GrondstoffenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF67FF81E99392800D42E17 /* GrondstoffenController.swift */; };
 		9AF67FFD1E993CF500D42E17 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF67FFB1E993CF500D42E17 /* Fabric.framework */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B68FA51BFC5A4B47D25A90B /* Pods-Bergjes2017.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bergjes2017.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bergjes2017/Pods-Bergjes2017.release.xcconfig"; sourceTree = "<group>"; };
+		7769AE3F410EE4B76E9A5D4A /* Pods_Bergjes2017.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bergjes2017.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2BDEDA1E8C43860025FB1E /* Bergjes2017.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bergjes2017.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A2BDEDD1E8C43860025FB1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A2BDEDF1E8C43860025FB1E /* MainpageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainpageViewController.swift; sourceTree = "<group>"; };
@@ -56,11 +60,13 @@
 		9A2BDEFF1E8C43870025FB1E /* Bergjes2017UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bergjes2017UITests.swift; sourceTree = "<group>"; };
 		9A2BDF011E8C43870025FB1E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9A2BDF0D1E8C4ABD0025FB1E /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		9A8A4DAF1E9C07CA00F62026 /* WrongScanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrongScanController.swift; sourceTree = "<group>"; };
 		9AF67FF51E9936D100D42E17 /* NewChickenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChickenViewController.swift; sourceTree = "<group>"; };
 		9AF67FF81E99392800D42E17 /* GrondstoffenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrondstoffenController.swift; sourceTree = "<group>"; };
 		9AF67FFB1E993CF500D42E17 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		9AF67FFC1E993CF500D42E17 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		9AF67FFF1E9948B800D42E17 /* VragenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VragenViewController.swift; sourceTree = "<group>"; };
+		B7BDE7B011A6D8A7681BAE60 /* Pods-Bergjes2017.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bergjes2017.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bergjes2017/Pods-Bergjes2017.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 			files = (
 				9AF67FFE1E993CF600D42E17 /* Crashlytics.framework in Frameworks */,
 				9AF67FFD1E993CF500D42E17 /* Fabric.framework in Frameworks */,
+				1CC2B327156A2260438C9B49 /* Pods_Bergjes2017.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +97,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8BD03E7DFF227576CF9F9CF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9AF67FFB1E993CF500D42E17 /* Fabric.framework */,
+				9AF67FFC1E993CF500D42E17 /* Crashlytics.framework */,
+				7769AE3F410EE4B76E9A5D4A /* Pods_Bergjes2017.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9A2BDED11E8C43860025FB1E = {
 			isa = PBXGroup;
 			children = (
@@ -97,8 +114,8 @@
 				9A2BDEF31E8C43860025FB1E /* Bergjes2017Tests */,
 				9A2BDEFE1E8C43870025FB1E /* Bergjes2017UITests */,
 				9A2BDEDB1E8C43860025FB1E /* Products */,
-				9AF67FFB1E993CF500D42E17 /* Fabric.framework */,
-				9AF67FFC1E993CF500D42E17 /* Crashlytics.framework */,
+				AEEB8D9E240ED40D9A7CC3F3 /* Pods */,
+				8BD03E7DFF227576CF9F9CF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,8 +169,18 @@
 				9A2BDEDF1E8C43860025FB1E /* MainpageViewController.swift */,
 				9AF67FF81E99392800D42E17 /* GrondstoffenController.swift */,
 				9AF67FFF1E9948B800D42E17 /* VragenViewController.swift */,
+				9A8A4DAF1E9C07CA00F62026 /* WrongScanController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AEEB8D9E240ED40D9A7CC3F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7BDE7B011A6D8A7681BAE60 /* Pods-Bergjes2017.debug.xcconfig */,
+				1B68FA51BFC5A4B47D25A90B /* Pods-Bergjes2017.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,10 +190,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A2BDF041E8C43870025FB1E /* Build configuration list for PBXNativeTarget "Bergjes2017" */;
 			buildPhases = (
+				AB5619C6C86C781CB0173CBD /* [CP] Check Pods Manifest.lock */,
 				9A2BDED61E8C43860025FB1E /* Sources */,
 				9A2BDED71E8C43860025FB1E /* Frameworks */,
 				9A2BDED81E8C43860025FB1E /* Resources */,
 				9AF67FFA1E993CCA00D42E17 /* ShellScript */,
+				2F8D6519D3027C2CD55A63C9 /* [CP] Embed Pods Frameworks */,
+				A1A4DA6AF145EF63FCCCA5B8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -290,6 +320,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2F8D6519D3027C2CD55A63C9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bergjes2017/Pods-Bergjes2017-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9AF67FFA1E993CCA00D42E17 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -303,6 +348,36 @@
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run 2ab9135fcf8e12ae6fcab2df3d46bfbd8d4c093b be70527408c5d83be0352e71b40d752a1568a4d3e0900b4a2dfc23b8b0e029a5";
 		};
+		A1A4DA6AF145EF63FCCCA5B8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bergjes2017/Pods-Bergjes2017-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB5619C6C86C781CB0173CBD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -312,6 +387,7 @@
 			files = (
 				9AF67FF91E99392800D42E17 /* GrondstoffenController.swift in Sources */,
 				9A2BDEE21E8C43860025FB1E /* QrScannerViewController.swift in Sources */,
+				9A8A4DB01E9C07CA00F62026 /* WrongScanController.swift in Sources */,
 				9A2BDF0E1E8C4ABD0025FB1E /* TabBarController.swift in Sources */,
 				9A2BDEDE1E8C43860025FB1E /* AppDelegate.swift in Sources */,
 				9A2BDEE01E8C43860025FB1E /* MainpageViewController.swift in Sources */,
@@ -466,6 +542,7 @@
 		};
 		9A2BDF051E8C43870025FB1E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7BDE7B011A6D8A7681BAE60 /* Pods-Bergjes2017.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 832NCTF3R5;
@@ -486,6 +563,7 @@
 		};
 		9A2BDF061E8C43870025FB1E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B68FA51BFC5A4B47D25A90B /* Pods-Bergjes2017.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 832NCTF3R5;

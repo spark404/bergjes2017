@@ -9,6 +9,7 @@
 import UIKit
 import Fabric
 import Crashlytics
+import AWSCore
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
+        
+        let AwsRegion = AWSRegionType.EUWest2 // London
+        let credentialsProvider = AWSStaticCredentialsProvider(
+            accessKey: "AKIAIN5GOKTYACMTGHNA",
+            secretKey: "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")
+        
+        let configuration = AWSServiceConfiguration(
+            region: AwsRegion,
+            credentialsProvider: credentialsProvider)
+        
+        AWSServiceManager.default().defaultServiceConfiguration = configuration
+        
         return true
     }
 

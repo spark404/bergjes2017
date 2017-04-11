@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import AWSLambda
 
 class QrScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
@@ -96,9 +97,22 @@ class QrScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             qrCodeFrameView?.frame = barCodeObject.bounds;
             
             if metadataObj.stringValue != nil {
-                sendNotification(qrcodeText: metadataObj.stringValue)
+                guard let qrUrl = parseQrcode(qrcodeText: metadataObj.stringValue) else {
+                    wrongScan()
+                    return
+                }
+                
+                let map = qrUrl.queryItems;
+                invokeParseScanFunction(qrcodeText: map["bergjes2017"]!)
+                sendNotification(qrcodeText: map["bergjes2017"]!)
             }
         }
+    }
+    
+    func wrongScan() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "wrongscan")
+        self.present(controller, animated: true, completion: nil)
     }
     
     func sendNotification(qrcodeText: String) {
@@ -106,6 +120,43 @@ class QrScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         NotificationCenter.default.post(name: notificationName, object: qrcodeText)
         tabBarController?.selectedIndex = 0
     }
-
+    
+    func invokeParseScanFunction(qrcodeText: String) {
+        let lambdaInvoker = AWSLambdaInvoker.default()
+        let jsonObject: [String: Any] = ["locationCode" : qrcodeText]
+        
+        lambdaInvoker
+            .invokeFunction("ScannedLocationRequest", jsonObject: jsonObject)
+            .continueWith(block: {(task) -> AWSTask<AnyObject>! in
+                if( task.error != nil) {
+                    let error: NSError = (task.error as NSError?)!;
+                        print("Error: \(error)")
+                        return nil
+                    }
+                    
+                    // Handle response in task.result
+                    return nil
+                })
+    }
+    
+    func parseQrcode(qrcodeText: String) -> Optional<URL> {
+        var url : URL?
+        if (qrcodeText.hasPrefix("http://www.fladderen.nl")) {
+            url = URL(string: qrcodeText);
+        }
+        
+        return url;
+    }
 }
 
+extension URL {
+    public var queryItems: [String: String] {
+        var params = [String: String]()
+        return URLComponents(url: self, resolvingAgainstBaseURL: false)?
+            .queryItems?
+            .reduce([:], { (_, item) -> [String: String] in
+                params[item.name] = item.value
+                return params
+            }) ?? [:]
+    }
+}

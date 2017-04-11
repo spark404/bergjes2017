@@ -32,7 +32,7 @@
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="248" verticalCompressionResistancePriority="200" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
                                 <rect key="frame" x="35" y="358.5" width="251" height="151.5"/>
-                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -123,6 +123,92 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
+        <!--Wrong Scan Controller-->
+        <scene sceneID="8jc-xe-6cg">
+            <objects>
+                <viewController storyboardIdentifier="wrongscan" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d38-Ud-YnV" customClass="WrongScanController" customModule="Bergjes2017" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L2J-sN-zN2"/>
+                        <viewControllerLayoutGuide type="bottom" id="woo-iG-UXo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VA4-nT-nXR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Sorry!" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="U88-Ei-h2u">
+                                <rect key="frame" x="112" y="263" width="96.5" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="... maar met deze QRCode kunnen we dus helemaal niks" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSI-fA-Ijd">
+                                <rect key="frame" x="26" y="323" width="268" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eu2-qO-R6Y">
+                                <rect key="frame" x="137" y="518" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Terug"/>
+                                <connections>
+                                    <action selector="handleCloseButton" destination="d38-Ud-YnV" eventType="touchUpInside" id="v3Q-U0-5fd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rSI-fA-Ijd" firstAttribute="leading" secondItem="VA4-nT-nXR" secondAttribute="leadingMargin" constant="10" id="6Ot-Hv-ORD"/>
+                            <constraint firstItem="U88-Ei-h2u" firstAttribute="centerY" secondItem="VA4-nT-nXR" secondAttribute="centerY" id="8Me-ad-JoY"/>
+                            <constraint firstItem="rSI-fA-Ijd" firstAttribute="top" secondItem="U88-Ei-h2u" secondAttribute="bottom" constant="18" id="QJP-C7-jBW"/>
+                            <constraint firstItem="U88-Ei-h2u" firstAttribute="centerX" secondItem="VA4-nT-nXR" secondAttribute="centerX" id="Tj6-Mo-HF3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rSI-fA-Ijd" secondAttribute="trailing" constant="10" id="WBm-wF-5JK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FAM-wD-sUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1550.625" y="358.0985915492958"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NwO-6A-YAX">
+            <objects>
+                <viewController storyboardIdentifier="correctscan" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RLO-2l-0tx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="akW-Iy-Qz3"/>
+                        <viewControllerLayoutGuide type="bottom" id="geu-Pk-wBb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YiV-Qh-I5h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="OK!!" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="n2z-Ei-uQA">
+                                <rect key="frame" x="124" y="263" width="72.5" height="42"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="... je hebt IETS gewonnen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H10-Iu-kYt">
+                                <rect key="frame" x="33" y="323" width="254" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="n2z-Ei-uQA" firstAttribute="centerY" secondItem="YiV-Qh-I5h" secondAttribute="centerY" id="JZr-87-KTr"/>
+                            <constraint firstItem="n2z-Ei-uQA" firstAttribute="centerX" secondItem="YiV-Qh-I5h" secondAttribute="centerX" id="Lcr-jy-icG"/>
+                            <constraint firstItem="H10-Iu-kYt" firstAttribute="top" secondItem="n2z-Ei-uQA" secondAttribute="bottom" constant="18" id="zJI-rs-YfJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="75c-q9-OXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2248" y="358"/>
+        </scene>
         <!--New Chicken View Controller-->
         <scene sceneID="xCH-jL-RvP">
             <objects>
@@ -206,7 +292,7 @@
                                         <rect key="frame" x="0.0" y="28" width="268" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4qi-Bm-b0a" id="Z9R-sr-M19">
-                                            <rect key="frame" x="0.0" y="0.0" width="268" height="40"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="268" height="39.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MountainSplashscreen" translatesAutoresizingMaskIntoConstraints="NO" id="yVe-Ce-1NI">
