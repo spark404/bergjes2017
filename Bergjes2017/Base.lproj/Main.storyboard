@@ -166,6 +166,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="rSI-fA-Ijd" secondAttribute="trailing" constant="10" id="WBm-wF-5JK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="sorryMessage" destination="rSI-fA-Ijd" id="Plq-wM-hR4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAM-wD-sUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -292,7 +295,7 @@
                                         <rect key="frame" x="0.0" y="28" width="268" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4qi-Bm-b0a" id="Z9R-sr-M19">
-                                            <rect key="frame" x="0.0" y="0.0" width="268" height="39.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="268" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MountainSplashscreen" translatesAutoresizingMaskIntoConstraints="NO" id="yVe-Ce-1NI">

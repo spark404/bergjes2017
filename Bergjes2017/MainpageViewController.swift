@@ -30,8 +30,11 @@ class MainpageViewController: UIViewController {
     }
 
     func handleNotification(withNotification notification : NSNotification) {
-        print("Received " + (notification.object as! String))
-        qrCode?.text = notification.object as? String
+        DispatchQueue.main.async {
+            self.qrCode?.text = notification.object as? String
+            self.tabBarController?.selectedIndex = 0
+        }
+
     }
 
 }

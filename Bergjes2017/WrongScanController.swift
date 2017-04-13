@@ -11,8 +11,13 @@ import UIKit
 
 class WrongScanController: UIViewController {
     
+    @IBOutlet var sorryMessage: UILabel?
+    var message: String?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        sorryMessage?.text = message ?? "... dit gaat em niet worden"
     }
     
     @IBAction func handleCloseButton() {
