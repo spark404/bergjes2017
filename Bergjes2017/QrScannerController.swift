@@ -56,6 +56,19 @@ class QrScannerController: NSObject {
         captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
     }
     
+    func checkCamera(completionHandler: @escaping (Void) -> Void, failedHandler: @escaping (Void) -> Void) {
+        let authStatus = AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        switch authStatus {
+        case .authorized: completionHandler()
+        case .denied: failedHandler()
+        case .notDetermined:
+            AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: { (granted :Bool) -> Void in
+                self.checkCamera(completionHandler: completionHandler, failedHandler: failedHandler)
+            });
+        default: failedHandler()
+        }
+    }
+    
     func startSession() {
         if !self.captureSession.isRunning {
             self.captureSession.startRunning()

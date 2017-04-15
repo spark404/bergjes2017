@@ -9,14 +9,23 @@
 import UIKit
 
 class QrScannerViewController: UIViewController {
+    @IBOutlet weak var errorMessage: UILabel!
     
     let qrscannerController = QrScannerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        qrscannerController.setupScanner(parentView: self.view)
         qrscannerController.delegate = self
+        
+        qrscannerController.checkCamera(completionHandler: {
+            (Void) in
+            DispatchQueue.main.async {
+                self.qrscannerController.setupScanner(parentView: self.view)
+            }
+        }, failedHandler: {
+           (Void) in
+            self.errorMessage.text = "Zonder camera toegang wordt het dus niks, pas het even aan in settings.."
+            })
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,6 +83,13 @@ extension QrScannerViewController: QrCodeResultDelegate {
         }, failedHandler: {
             (error: NSError) -> Void in
             print("\(error)")
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Alert", message: error.userInfo["errorMessage"] as? String, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true) {
+                    self.qrscannerController.startSession()
+                }
+            }
         })
     }
     

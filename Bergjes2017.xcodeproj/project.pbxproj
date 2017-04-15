@@ -22,6 +22,14 @@
 		9A83D8AD1EA001B300EEE2F1 /* LocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83D8AC1EA001B300EEE2F1 /* LocationRequest.swift */; };
 		9A83D8B01EA013B500EEE2F1 /* LambdaBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83D8AF1EA013B500EEE2F1 /* LambdaBase.swift */; };
 		9A83D8B31EA0151D00EEE2F1 /* LocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83D8B21EA0151D00EEE2F1 /* LocationResponse.swift */; };
+		9A83D8B51EA14A3700EEE2F1 /* ResourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83D8B41EA14A3700EEE2F1 /* ResourceTableViewCell.swift */; };
+		9A83D8B81EA15C7C00EEE2F1 /* StatusRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83D8B71EA15C7C00EEE2F1 /* StatusRequest.swift */; };
+		9A83D8BA1EA15D4900EEE2F1 /* StatusResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83D8B91EA15D4900EEE2F1 /* StatusResponse.swift */; };
+		9A83D8BC1EA167A400EEE2F1 /* SpinnerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83D8BB1EA167A400EEE2F1 /* SpinnerController.swift */; };
+		9A83D8BE1EA16A9E00EEE2F1 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83D8BD1EA16A9E00EEE2F1 /* Resource.swift */; };
+		9A83D8C01EA180C600EEE2F1 /* QuestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83D8BF1EA180C600EEE2F1 /* QuestionsTableViewCell.swift */; };
+		9A83D8C21EA182AC00EEE2F1 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83D8C11EA182AC00EEE2F1 /* Question.swift */; };
+		9A83D8C41EA1874300EEE2F1 /* QuestionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A83D8C31EA1874300EEE2F1 /* QuestionDetailViewController.swift */; };
 		9A8A4DB01E9C07CA00F62026 /* WrongScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A4DAF1E9C07CA00F62026 /* WrongScanController.swift */; };
 		9AF67FF61E9936D100D42E17 /* NewChickenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF67FF51E9936D100D42E17 /* NewChickenViewController.swift */; };
 		9AF67FF91E99392800D42E17 /* GrondstoffenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF67FF81E99392800D42E17 /* GrondstoffenController.swift */; };
@@ -70,6 +78,14 @@
 		9A83D8AC1EA001B300EEE2F1 /* LocationRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRequest.swift; sourceTree = "<group>"; };
 		9A83D8AF1EA013B500EEE2F1 /* LambdaBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LambdaBase.swift; sourceTree = "<group>"; };
 		9A83D8B21EA0151D00EEE2F1 /* LocationResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationResponse.swift; sourceTree = "<group>"; };
+		9A83D8B41EA14A3700EEE2F1 /* ResourceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceTableViewCell.swift; sourceTree = "<group>"; };
+		9A83D8B71EA15C7C00EEE2F1 /* StatusRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusRequest.swift; sourceTree = "<group>"; };
+		9A83D8B91EA15D4900EEE2F1 /* StatusResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusResponse.swift; sourceTree = "<group>"; };
+		9A83D8BB1EA167A400EEE2F1 /* SpinnerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpinnerController.swift; sourceTree = "<group>"; };
+		9A83D8BD1EA16A9E00EEE2F1 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		9A83D8BF1EA180C600EEE2F1 /* QuestionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionsTableViewCell.swift; sourceTree = "<group>"; };
+		9A83D8C11EA182AC00EEE2F1 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		9A83D8C31EA1874300EEE2F1 /* QuestionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionDetailViewController.swift; sourceTree = "<group>"; };
 		9A8A4DAF1E9C07CA00F62026 /* WrongScanController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrongScanController.swift; sourceTree = "<group>"; };
 		9AF67FF51E9936D100D42E17 /* NewChickenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChickenViewController.swift; sourceTree = "<group>"; };
 		9AF67FF81E99392800D42E17 /* GrondstoffenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrondstoffenController.swift; sourceTree = "<group>"; };
@@ -142,6 +158,7 @@
 		9A2BDEDC1E8C43860025FB1E /* Bergjes2017 */ = {
 			isa = PBXGroup;
 			children = (
+				9A83D8B61EA14ACD00EEE2F1 /* PrototypeCells */,
 				9A83D8B11EA0150B00EEE2F1 /* Models */,
 				9A83D8AE1EA013A600EEE2F1 /* Network */,
 				9AF67FF71E9938E900D42E17 /* Controllers */,
@@ -178,6 +195,7 @@
 			children = (
 				9A83D8AF1EA013B500EEE2F1 /* LambdaBase.swift */,
 				9A83D8AC1EA001B300EEE2F1 /* LocationRequest.swift */,
+				9A83D8B71EA15C7C00EEE2F1 /* StatusRequest.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -186,8 +204,20 @@
 			isa = PBXGroup;
 			children = (
 				9A83D8B21EA0151D00EEE2F1 /* LocationResponse.swift */,
+				9A83D8B91EA15D4900EEE2F1 /* StatusResponse.swift */,
+				9A83D8BD1EA16A9E00EEE2F1 /* Resource.swift */,
+				9A83D8C11EA182AC00EEE2F1 /* Question.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		9A83D8B61EA14ACD00EEE2F1 /* PrototypeCells */ = {
+			isa = PBXGroup;
+			children = (
+				9A83D8B41EA14A3700EEE2F1 /* ResourceTableViewCell.swift */,
+				9A83D8BF1EA180C600EEE2F1 /* QuestionsTableViewCell.swift */,
+			);
+			name = PrototypeCells;
 			sourceTree = "<group>";
 		};
 		9AF67FF71E9938E900D42E17 /* Controllers */ = {
@@ -201,6 +231,8 @@
 				9AF67FFF1E9948B800D42E17 /* VragenViewController.swift */,
 				9A8A4DAF1E9C07CA00F62026 /* WrongScanController.swift */,
 				9A83D8A81E9FF87100EEE2F1 /* QrScannerController.swift */,
+				9A83D8BB1EA167A400EEE2F1 /* SpinnerController.swift */,
+				9A83D8C31EA1874300EEE2F1 /* QuestionDetailViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -417,14 +449,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AF67FF91E99392800D42E17 /* GrondstoffenController.swift in Sources */,
+				9A83D8B51EA14A3700EEE2F1 /* ResourceTableViewCell.swift in Sources */,
+				9A83D8BA1EA15D4900EEE2F1 /* StatusResponse.swift in Sources */,
+				9A83D8C41EA1874300EEE2F1 /* QuestionDetailViewController.swift in Sources */,
 				9A83D8B31EA0151D00EEE2F1 /* LocationResponse.swift in Sources */,
+				9A83D8C01EA180C600EEE2F1 /* QuestionsTableViewCell.swift in Sources */,
+				9A83D8C21EA182AC00EEE2F1 /* Question.swift in Sources */,
 				9A2BDEE21E8C43860025FB1E /* QrScannerViewController.swift in Sources */,
 				9A83D8AD1EA001B300EEE2F1 /* LocationRequest.swift in Sources */,
 				9A83D8A91E9FF87100EEE2F1 /* QrScannerController.swift in Sources */,
 				9A8A4DB01E9C07CA00F62026 /* WrongScanController.swift in Sources */,
 				9A2BDF0E1E8C4ABD0025FB1E /* TabBarController.swift in Sources */,
+				9A83D8BE1EA16A9E00EEE2F1 /* Resource.swift in Sources */,
+				9A83D8B81EA15C7C00EEE2F1 /* StatusRequest.swift in Sources */,
 				9A83D8AB1E9FFD6100EEE2F1 /* Extensions.swift in Sources */,
 				9A83D8B01EA013B500EEE2F1 /* LambdaBase.swift in Sources */,
+				9A83D8BC1EA167A400EEE2F1 /* SpinnerController.swift in Sources */,
 				9A2BDEDE1E8C43860025FB1E /* AppDelegate.swift in Sources */,
 				9A2BDEE01E8C43860025FB1E /* MainpageViewController.swift in Sources */,
 				9AF67FF61E9936D100D42E17 /* NewChickenViewController.swift in Sources */,

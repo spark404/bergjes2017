@@ -23,14 +23,18 @@ class LocationResponse: NSObject {
     init?(dict: NSDictionary) {
         self.available = dict["locationAvailable"] as? Bool
         
-        let questionObject = dict["question"] as! NSDictionary
+        if let questionObject = dict["question"] {
+            let questionDict = questionObject as! NSDictionary
+            self.question = questionDict["question"] as? String
+            
+            if let answers = questionDict["answers"] {
+                let answersDict = answers as! NSDictionary
+                self.answerA = answersDict["A"] as? String
+                self.answerB = answersDict["B"] as? String
+                self.answerC = answersDict["C"] as? String
+                self.answerD = answersDict["D"] as? String
+            }
+        }
         
-        self.question = questionObject["question"] as? String
-        
-        let answers = questionObject["answers"] as! NSDictionary
-        self.answerA = answers["A"] as? String
-        self.answerB = answers["B"] as? String
-        self.answerC = answers["C"] as? String
-        self.answerD = answers["D"] as? String
     }
 }

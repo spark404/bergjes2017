@@ -9,33 +9,36 @@
 import UIKit
 
 class MainpageViewController: UIViewController {
-    
+
     @IBOutlet var qrCode: UILabel?;
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        let notificationName = Notification.Name("NotificationIdentifier")
-        NotificationCenter.default.addObserver(self, selector: #selector(MainpageViewController.handleNotification), name: notificationName, object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let spinnerController = SpinnerController(parentView: self.view)
+        spinnerController.activateSpinner()
+        
+        let statusRequest = StatusRequest()
+        statusRequest.executeRequest(completionHandler: { (response: StatusResponse) in
+            DispatchQueue.main.async {
+                spinnerController.deactivateSpinner()
+            }
+        }) { (error: NSError) in
+            print("Error while executing StatusRequest: \(error)")
+            
+            DispatchQueue.main.async {
+                spinnerController.deactivateSpinner()
+            }
+        }
 
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    func handleNotification(withNotification notification : NSNotification) {
-        DispatchQueue.main.async {
-            self.qrCode?.text = notification.object as? String
-            self.tabBarController?.selectedIndex = 0
-        }
-
-    }
-
+    
 }
 
