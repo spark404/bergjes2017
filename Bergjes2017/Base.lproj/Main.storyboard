@@ -90,7 +90,7 @@
                             <constraint firstItem="ji0-54-nUX" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="10" id="zBX-4f-LZD"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Overzicht" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Overzicht" image="map" selectedImage="map" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="roundEnd" destination="pHm-6t-L56" id="u9x-07-gXn"/>
                     </connections>
@@ -394,7 +394,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="5oJ-Ue-Awt" secondAttribute="trailing" constant="10" id="xqM-k8-7Cn"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Grondstoffen" id="6Mm-qv-Gtn"/>
+                    <tabBarItem key="tabBarItem" title="Grondstoffen" image="first" selectedImage="first" id="6Mm-qv-Gtn"/>
                     <connections>
                         <outlet property="resourcesTableView" destination="VCi-fH-bkJ" id="D4j-tC-UgR"/>
                     </connections>
@@ -429,7 +429,7 @@
                                         <rect key="frame" x="0.0" y="28" width="268" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S15-6a-MTW" id="3Oj-Q6-3Qd">
-                                            <rect key="frame" x="0.0" y="0.0" width="268" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="268" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MountainSplashscreen" translatesAutoresizingMaskIntoConstraints="NO" id="OLv-tl-sVy">
@@ -471,7 +471,7 @@
                             <constraint firstItem="b1U-rh-NEt" firstAttribute="top" secondItem="75D-Qo-Rdf" secondAttribute="bottom" constant="10" id="ewa-kz-v3d"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Vragen" id="sxW-mt-i2C"/>
+                    <tabBarItem key="tabBarItem" title="Vragen" image="checklist" selectedImage="checklist" id="sxW-mt-i2C"/>
                     <connections>
                         <outlet property="questionsTableView" destination="b1U-rh-NEt" id="0pP-rl-bIs"/>
                     </connections>
@@ -701,8 +701,10 @@
     <resources>
         <image name="Chicken" width="48" height="48"/>
         <image name="MountainSplashscreen" width="505" height="653"/>
+        <image name="checklist" width="25" height="25"/>
         <image name="first" width="30" height="30"/>
         <image name="grumpycat" width="480" height="480"/>
+        <image name="map" width="25" height="25"/>
         <image name="qrcode" width="25" height="25"/>
         <image name="questionOpen" width="40" height="40"/>
     </resources>
