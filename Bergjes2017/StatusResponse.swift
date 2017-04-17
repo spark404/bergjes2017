@@ -10,6 +10,7 @@ import Foundation
 
 class StatusResponse: NSObject {
     var activeRound: String?
+    var roundExpiry: Date?
     var resourceList: [Resource] = []
     var questionList: [Question] = []
     
@@ -19,6 +20,10 @@ class StatusResponse: NSObject {
     
     init?(dict: NSDictionary) {
         self.activeRound = dict["activeRound"] as? String
+        
+        if let timestamp = dict["roundExpiry"] {
+            self.roundExpiry = Date(timeIntervalSince1970: TimeInterval(timestamp as! Int))
+        }
         
         let resources = dict["resourceList"] as! [NSDictionary]
         for resourceItem in resources  {

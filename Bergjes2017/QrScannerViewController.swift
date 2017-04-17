@@ -70,15 +70,20 @@ extension QrScannerViewController: QrCodeResultDelegate {
         let locationRequest = LocationRequest(qrcodeText: map["bergjes2017"]!)
         locationRequest.executeRequest(completionHandler: {
             (response: LocationResponse) -> Void in
-            
-            if !response.available! {
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                if !response.available! {
                     self.wrongScan(message: "... maar volgens onze gegevens ben je hier al geweest deze ronde")
+                    return
                 }
-                return
+            
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let controller = storyboard.instantiateViewController(withIdentifier: "result") as! ResultViewController
+                controller.result = "NEWLOCATION"
+                controller.resultMessage = "Nieuwe vraag; \"\(response.question!)\".\n\nDeze kan je beantwoorden via het \"vragen\" tabje.\n\n" +
+                    "Deze locatie heeft op dit moment de grondstof \"\(response.resource?.getDecriptionForResource()! ?? "....")\""
+                controller.delegate = self
+                self.present(controller, animated: true)
             }
-            
-            
         }, failedHandler: {
             (error: NSError) -> Void in
             print("\(error)")
@@ -92,5 +97,13 @@ extension QrScannerViewController: QrCodeResultDelegate {
         })
     }
     
+}
+
+extension QrScannerViewController: ResultDismissDelegate {
+    func resultDismissed() {
+        DispatchQueue.main.async {
+            self.tabBarController?.selectedIndex = 3;
+        }
+    }
 }
 

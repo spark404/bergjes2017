@@ -15,6 +15,7 @@ class LocationResponse: NSObject {
     var answerB: String?
     var answerC: String?
     var answerD: String?
+    var resource: Resource?
     
     override init() {
         super.init()
@@ -34,6 +35,11 @@ class LocationResponse: NSObject {
                 self.answerC = answersDict["C"] as? String
                 self.answerD = answersDict["D"] as? String
             }
+        }
+        
+        if let resourceObject = dict["resource"] {
+            let resourceItem = resourceObject as! NSDictionary
+            self.resource = Resource(type: (resourceItem["resourceType"] as? String)!, amount: 0)
         }
         
     }

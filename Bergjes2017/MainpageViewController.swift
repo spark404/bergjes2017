@@ -10,10 +10,12 @@ import UIKit
 
 class MainpageViewController: UIViewController {
 
-    @IBOutlet var qrCode: UILabel?;
-
+    @IBOutlet weak var roundEnd: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -22,7 +24,12 @@ class MainpageViewController: UIViewController {
         
         let statusRequest = StatusRequest()
         statusRequest.executeRequest(completionHandler: { (response: StatusResponse) in
+            
             DispatchQueue.main.async {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "HH:mm:ss"
+                self.roundEnd.text = formatter.string(from: response.roundExpiry!)
+                
                 spinnerController.deactivateSpinner()
             }
         }) { (error: NSError) in
@@ -38,6 +45,9 @@ class MainpageViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func update() {
     }
     
 }
