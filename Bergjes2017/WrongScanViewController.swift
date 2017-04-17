@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class WrongScanController: UIViewController {
+class WrongScanViewController: UIViewController {
     
     @IBOutlet var sorryMessage: UILabel?
     var message: String?

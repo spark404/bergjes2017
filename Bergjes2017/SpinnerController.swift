@@ -19,6 +19,8 @@ class SpinnerController: NSObject {
     
 
     func activateSpinner() {
+        activityView.hidesWhenStopped = true
+        activityView.color = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         activityView.center = parentView.center
         activityView.startAnimating()
         
@@ -27,6 +29,7 @@ class SpinnerController: NSObject {
     
     func deactivateSpinner() {
         activityView.stopAnimating()
+        activityView.removeFromSuperview()
     }
 
 }

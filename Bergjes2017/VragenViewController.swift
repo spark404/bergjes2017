@@ -29,14 +29,16 @@ class VragenViewController: UIViewController {
         statusRequest.executeRequest(completionHandler: { (response: StatusResponse) in
             self.questions = response.questionList
             DispatchQueue.main.async {
-                spinnerController.deactivateSpinner()
                 self.questionsTableView.reloadData()
+                spinnerController.deactivateSpinner()
             }
         }) { (error: NSError) in
-            print("Error while executing StatusRequest: \(error)")
-            
             DispatchQueue.main.async {
                 spinnerController.deactivateSpinner()
+                
+                let alert = UIAlertController(title: "Alert", message: error.userInfo["errorMessage"] as? String, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true)
             }
         }
     }
@@ -58,8 +60,17 @@ extension VragenViewController: UITableViewDelegate {
 extension VragenViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:QuestionsTableViewCell = self.questionsTableView.dequeueReusableCell(withIdentifier: "questionCell")! as! QuestionsTableViewCell
-        cell.questionText.text = questions![indexPath.row].question
-        cell.questionImage.image = #imageLiteral(resourceName: "questionOpen")
+        let currentQuestion = questions![indexPath.row]
+        cell.questionText.text = currentQuestion.question
+        
+        switch currentQuestion.answerStatus {
+        case "CORRECT":
+            cell.questionImage.image = #imageLiteral(resourceName: "questionAnsweredOK")
+        case "WRONG":
+            cell.questionImage.image = #imageLiteral(resourceName: "questionAnsweredWrong")
+        default:
+            cell.questionImage.image = #imageLiteral(resourceName: "questionOpen")
+        }
         return cell
     }
     

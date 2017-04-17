@@ -128,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="750" y="360"/>
         </scene>
-        <!--Wrong Scan Controller-->
+        <!--Wrong Scan View Controller-->
         <scene sceneID="8jc-xe-6cg">
             <objects>
-                <viewController storyboardIdentifier="wrongscan" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d38-Ud-YnV" customClass="WrongScanController" customModule="Bergjes2017" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="wrongscan" useStoryboardIdentifierAsRestorationIdentifier="YES" id="d38-Ud-YnV" customClass="WrongScanViewController" customModule="Bergjes2017" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L2J-sN-zN2"/>
                         <viewControllerLayoutGuide type="bottom" id="woo-iG-UXo"/>
@@ -179,10 +179,10 @@
             </objects>
             <point key="canvasLocation" x="1550.625" y="358.0985915492958"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="NwO-6A-YAX">
             <objects>
-                <viewController storyboardIdentifier="correctscan" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RLO-2l-0tx" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="result" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RLO-2l-0tx" customClass="ResultViewController" customModule="Bergjes2017" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="akW-Iy-Qz3"/>
                         <viewControllerLayoutGuide type="bottom" id="geu-Pk-wBb"/>
@@ -191,15 +191,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="OK!!" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="n2z-Ei-uQA">
-                                <rect key="frame" x="124" y="263" width="72.5" height="42"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="... je hebt IETS gewonnen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H10-Iu-kYt">
-                                <rect key="frame" x="33" y="323" width="254" height="17"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facepalm" translatesAutoresizingMaskIntoConstraints="NO" id="vWP-hU-gLz">
+                                <rect key="frame" x="16" y="20" width="288" height="288"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vWP-hU-gLz" secondAttribute="height" multiplier="1:1" id="cAk-fa-XW7"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RNb-mh-Zmj">
+                                <rect key="frame" x="16" y="530" width="40" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="y19-YA-hQz"/>
+                                </constraints>
+                                <state key="normal" title="Terug"/>
+                                <connections>
+                                    <action selector="backButton:" destination="RLO-2l-0tx" eventType="touchUpInside" id="wRj-f7-H5O"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="... je hebt IETS gewonnen" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="H10-Iu-kYt">
+                                <rect key="frame" x="26" y="323" width="268" height="197"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -207,15 +216,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="n2z-Ei-uQA" firstAttribute="centerY" secondItem="YiV-Qh-I5h" secondAttribute="centerY" id="JZr-87-KTr"/>
-                            <constraint firstItem="n2z-Ei-uQA" firstAttribute="centerX" secondItem="YiV-Qh-I5h" secondAttribute="centerX" id="Lcr-jy-icG"/>
-                            <constraint firstItem="H10-Iu-kYt" firstAttribute="top" secondItem="n2z-Ei-uQA" secondAttribute="bottom" constant="18" id="zJI-rs-YfJ"/>
+                            <constraint firstItem="RNb-mh-Zmj" firstAttribute="top" secondItem="H10-Iu-kYt" secondAttribute="bottom" constant="10" id="7aG-Oo-qwJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vWP-hU-gLz" secondAttribute="trailing" id="I1f-gU-1IU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H10-Iu-kYt" secondAttribute="trailing" constant="10" id="Prd-LE-WXm"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="vWP-hU-gLz" secondAttribute="leading" id="Upq-71-W24"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="RNb-mh-Zmj" secondAttribute="leading" id="ZpU-Yy-cJD"/>
+                            <constraint firstItem="geu-Pk-wBb" firstAttribute="top" secondItem="RNb-mh-Zmj" secondAttribute="bottom" constant="8" id="hQW-dM-g9u"/>
+                            <constraint firstItem="H10-Iu-kYt" firstAttribute="leading" secondItem="YiV-Qh-I5h" secondAttribute="leadingMargin" constant="10" id="hio-GG-8XH"/>
+                            <constraint firstItem="vWP-hU-gLz" firstAttribute="top" secondItem="akW-Iy-Qz3" secondAttribute="bottom" id="i1f-x0-s61"/>
+                            <constraint firstItem="H10-Iu-kYt" firstAttribute="top" secondItem="vWP-hU-gLz" secondAttribute="bottom" constant="15" id="zvD-ct-fa7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="resultImage" destination="vWP-hU-gLz" id="CD4-Dt-Tsc"/>
+                        <outlet property="resultText" destination="H10-Iu-kYt" id="vkl-ez-8IH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75c-q9-OXL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2248" y="358"/>
+            <point key="canvasLocation" x="2246.25" y="357.04225352112678"/>
         </scene>
         <!--New Chicken View Controller-->
         <scene sceneID="xCH-jL-RvP">
@@ -269,7 +288,7 @@
         <!--Grondstoffen-->
         <scene sceneID="vkx-yJ-9HP">
             <objects>
-                <viewController id="3Wk-OV-BDe" customClass="GrondstoffenController" customModule="Bergjes2017" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3Wk-OV-BDe" customClass="GrondstoffenViewController" customModule="Bergjes2017" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NvD-ps-X0w"/>
                         <viewControllerLayoutGuide type="bottom" id="TJz-bh-iqh"/>
@@ -462,7 +481,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="232" id="pxV-pV-vWD"/>
                                 </constraints>
-                                <mutableString key="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -542,6 +561,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Agw-Sp-VQi">
                                 <rect key="frame" x="16" y="530" width="129" height="30"/>
                                 <state key="normal" title="Scan het antwoord"/>
+                                <connections>
+                                    <action selector="scanButton:" destination="SJf-PB-u8A" eventType="touchUpInside" id="Pxh-QU-AtX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ekh-lU-zUq">
                                 <rect key="frame" x="264" y="530" width="40" height="30"/>
@@ -589,11 +611,54 @@
                         <outlet property="answerTextC" destination="gVJ-to-SYg" id="pFO-jB-pUe"/>
                         <outlet property="answerTextD" destination="qTW-fh-VEm" id="bEb-td-n7a"/>
                         <outlet property="questionText" destination="Hwc-g8-4a6" id="c6r-pg-NgF"/>
+                        <outlet property="scanAnswerButton" destination="Agw-Sp-VQi" id="Vqg-zk-G45"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZGr-ND-MDR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1496.25" y="1705.9859154929577"/>
+        </scene>
+        <!--Scan Answer View Controller-->
+        <scene sceneID="H1r-At-Qqx">
+            <objects>
+                <viewController storyboardIdentifier="scanAnswer" id="hlp-Zb-JZ9" customClass="ScanAnswerViewController" customModule="Bergjes2017" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cpI-2c-vwo"/>
+                        <viewControllerLayoutGuide type="bottom" id="pQg-fX-ySj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y2O-aJ-hUz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aht-Q2-fws">
+                                <rect key="frame" x="16" y="20" width="288" height="502"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09e-ST-u8A">
+                                <rect key="frame" x="16" y="530" width="62" height="30"/>
+                                <state key="normal" title="Afbreken"/>
+                                <connections>
+                                    <action selector="canceButton:" destination="hlp-Zb-JZ9" eventType="touchUpInside" id="uVf-qU-AMa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pQg-fX-ySj" firstAttribute="top" secondItem="09e-ST-u8A" secondAttribute="bottom" constant="8" id="0LB-Mg-6yZ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="09e-ST-u8A" secondAttribute="leading" id="EKO-eg-UX6"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="aht-Q2-fws" secondAttribute="leading" id="JDR-N7-l7V"/>
+                            <constraint firstItem="aht-Q2-fws" firstAttribute="top" secondItem="cpI-2c-vwo" secondAttribute="bottom" id="QFe-td-tMJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aht-Q2-fws" secondAttribute="trailing" id="p2N-tf-j4E"/>
+                            <constraint firstItem="09e-ST-u8A" firstAttribute="top" secondItem="aht-Q2-fws" secondAttribute="bottom" constant="8" id="zKI-UN-QkS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="previewView" destination="aht-Q2-fws" id="XcN-1F-b1u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6hG-bJ-sAo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2193.75" y="1705.9859154929577"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -620,6 +685,7 @@
     <resources>
         <image name="Chicken" width="48" height="48"/>
         <image name="MountainSplashscreen" width="505" height="653"/>
+        <image name="facepalm" width="600" height="600"/>
         <image name="first" width="30" height="30"/>
         <image name="qrcode" width="25" height="25"/>
         <image name="questionOpen" width="40" height="40"/>

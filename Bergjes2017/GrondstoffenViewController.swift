@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class GrondstoffenController: UIViewController {
+class GrondstoffenViewController: UIViewController {
     @IBOutlet weak var resourcesTableView: UITableView!
     
     var resources: [Resource]?
@@ -29,27 +29,29 @@ class GrondstoffenController: UIViewController {
         statusRequest.executeRequest(completionHandler: { (response: StatusResponse) in
             self.resources = response.resourceList
             DispatchQueue.main.async {
-                spinnerController.deactivateSpinner()
                 self.resourcesTableView.reloadData()
+                spinnerController.deactivateSpinner()
             }
         }) { (error: NSError) in
-            print("Error while executing StatusRequest: \(error)")
-            
             DispatchQueue.main.async {
                 spinnerController.deactivateSpinner()
+                
+                let alert = UIAlertController(title: "Alert", message: error.userInfo["errorMessage"] as? String, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true)
             }
         }
     }
     
 }
 
-extension GrondstoffenController: UITableViewDelegate {
+extension GrondstoffenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40.0
     }
 }
 
-extension GrondstoffenController: UITableViewDataSource {
+extension GrondstoffenViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:ResourceTableViewCell = self.resourcesTableView.dequeueReusableCell(withIdentifier: "resourceCell")! as! ResourceTableViewCell
         

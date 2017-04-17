@@ -15,13 +15,15 @@ class Question: NSObject {
     var answerB: String!
     var answerC: String!
     var answerD: String!
+    var answerStatus: String!
     
-    init?(questionKey: String, question: String, answerA: String, answerB: String, answerC: String, answerD: String) {
+    init?(questionKey: String, question: String, answerA: String, answerB: String, answerC: String, answerD: String, answerStatus: String) {
         self.question = question
         self.questionKey = questionKey
         self.answerA = answerA
         self.answerB = answerB
         self.answerC = answerC
         self.answerD = answerD
+        self.answerStatus = answerStatus
     }
 }

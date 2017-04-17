@@ -46,7 +46,7 @@ class QrScannerViewController: UIViewController {
     
     func wrongScan(message: String) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewController(withIdentifier: "wrongscan") as! WrongScanController
+        let controller = storyboard.instantiateViewController(withIdentifier: "wrongscan") as! WrongScanViewController
         controller.message = message;
         self.present(controller, animated: true, completion: nil)
     }
@@ -78,17 +78,16 @@ extension QrScannerViewController: QrCodeResultDelegate {
                 return
             }
             
-            let notificationName = Notification.Name("NotificationIdentifier")
-            NotificationCenter.default.post(name: notificationName, object: response.question)
+            
         }, failedHandler: {
             (error: NSError) -> Void in
             print("\(error)")
             DispatchQueue.main.async {
-                let alert = UIAlertController(title: "Alert", message: error.userInfo["errorMessage"] as? String, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true) {
+                let alert = UIAlertController(title: "Oeps", message: error.userInfo["errorMessage"] as? String, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
                     self.qrscannerController.startSession()
-                }
+                }))
+                self.present(alert, animated: true)
             }
         })
     }

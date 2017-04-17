@@ -37,8 +37,9 @@ class StatusResponse: NSObject {
             let answerB: String = answers["B"] as! String!
             let answerC: String = answers["C"] as! String!
             let answerD: String = answers["D"] as! String!
+            let answerStatus: String = questionItem["answerStatus"] as! String!
             
-            let question = Question(questionKey: questionKey, question: questionText, answerA: answerA, answerB: answerB, answerC: answerC, answerD: answerD)
+            let question = Question(questionKey: questionKey, question: questionText, answerA: answerA, answerB: answerB, answerC: answerC, answerD: answerD, answerStatus: answerStatus)
             questionList.append(question!)
         }
     }
