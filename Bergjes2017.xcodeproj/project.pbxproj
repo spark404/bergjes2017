@@ -37,6 +37,7 @@
 		9A8A4DB01E9C07CA00F62026 /* WrongScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A4DAF1E9C07CA00F62026 /* WrongScanViewController.swift */; };
 		9A92D4F31EACD71D00018F99 /* NewChickenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92D4F21EACD71D00018F99 /* NewChickenRequest.swift */; };
 		9A92D4F51EACD7C900018F99 /* NewChickenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92D4F41EACD7C900018F99 /* NewChickenResponse.swift */; };
+		9A92D4F71EACE2DD00018F99 /* ErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92D4F61EACE2DD00018F99 /* ErrorController.swift */; };
 		9AF67FF61E9936D100D42E17 /* NewChickenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF67FF51E9936D100D42E17 /* NewChickenViewController.swift */; };
 		9AF67FF91E99392800D42E17 /* GrondstoffenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF67FF81E99392800D42E17 /* GrondstoffenViewController.swift */; };
 		9AF67FFD1E993CF500D42E17 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF67FFB1E993CF500D42E17 /* Fabric.framework */; };
@@ -99,6 +100,7 @@
 		9A8A4DAF1E9C07CA00F62026 /* WrongScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WrongScanViewController.swift; sourceTree = "<group>"; };
 		9A92D4F21EACD71D00018F99 /* NewChickenRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChickenRequest.swift; sourceTree = "<group>"; };
 		9A92D4F41EACD7C900018F99 /* NewChickenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChickenResponse.swift; sourceTree = "<group>"; };
+		9A92D4F61EACE2DD00018F99 /* ErrorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorController.swift; sourceTree = "<group>"; };
 		9AF67FF51E9936D100D42E17 /* NewChickenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChickenViewController.swift; sourceTree = "<group>"; };
 		9AF67FF81E99392800D42E17 /* GrondstoffenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrondstoffenViewController.swift; sourceTree = "<group>"; };
 		9AF67FFB1E993CF500D42E17 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			children = (
 				9A83D8A81E9FF87100EEE2F1 /* QrScannerController.swift */,
 				9A83D8BB1EA167A400EEE2F1 /* SpinnerController.swift */,
+				9A92D4F61EACE2DD00018F99 /* ErrorController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				9A2BDEE01E8C43860025FB1E /* MainpageViewController.swift in Sources */,
 				9A83D8C91EA4C15100EEE2F1 /* AnswerRequest.swift in Sources */,
 				9AF67FF61E9936D100D42E17 /* NewChickenViewController.swift in Sources */,
+				9A92D4F71EACE2DD00018F99 /* ErrorController.swift in Sources */,
 				9AF680001E9948B800D42E17 /* VragenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

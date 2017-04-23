@@ -69,16 +69,22 @@ class GrondstoffenViewController: UIViewController {
     
     @IBAction func newChickenSelected(_ sender: Any) {
         if (chickenPossible()) {
+            let spinnerController = SpinnerController(parentView: self.view)
+            DispatchQueue.main.async {
+                spinnerController.activateSpinner()
+            }
             let request = NewChickenRequest()
             request.executeRequest(completionHandler: { (response) in
                 DispatchQueue.main.async {
+                    spinnerController.deactivateSpinner()
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let controller = storyboard.instantiateViewController(withIdentifier: "newchicken") as! ResultViewController
+                    let controller = storyboard.instantiateViewController(withIdentifier: "newchicken") as! NewChickenViewController
                     self.present(controller, animated: true)
                 }
             }, failedHandler: { (error) in
                 print("\(error)")
                 DispatchQueue.main.async {
+                    spinnerController.deactivateSpinner()
                     let errorMessagee = error.userInfo["errorMessage"] ?? error.userInfo["Message"] ?? "Onbekende fout"
                     let alert = UIAlertController(title: "Oeps", message: errorMessagee as? String, preferredStyle: UIAlertControllerStyle.alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))

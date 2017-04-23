@@ -18,9 +18,10 @@ class StatusRequest: LambdaBase {
         lambdaInvoker
             .invokeFunction("StatusRequest", jsonObject: jsonObject)
             .continueWith(block: {(task) -> AWSTask<AnyObject>! in
-                if( task.error != nil) {
+                if(task.isFaulted) {
                     let error: NSError = (task.error as NSError?)!;
                     failedHandler(error)
+                    return nil
                 }
                 
                 // Handle response in task.result

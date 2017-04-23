@@ -31,22 +31,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Einde van de ronde:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEy-Nj-l2W">
-                                <rect key="frame" x="26" y="227" width="152" height="21"/>
+                                <rect key="frame" x="26" y="255" width="152" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHm-6t-L56">
-                                <rect key="frame" x="258" y="227" width="46" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..:.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHm-6t-L56">
+                                <rect key="frame" x="280" y="255" width="24" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ji0-54-nUX">
-                                <rect key="frame" x="26" y="256" width="278" height="263"/>
+                                <rect key="frame" x="26" y="284" width="278" height="235"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Speluitleg levend kolonisten van catan">
+                                    <fragment content="Speluitleg &quot;Stef de Kolonist&quot;">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                             <font key="NSFont" size="13.333333015441895" name="Arial-BoldMT"/>
@@ -185,7 +185,7 @@ Cg
                                         </attributes>
                                     </fragment>
                                     <fragment>
-                                        <string key="content">Zoek een locatie met een Q que le QR-code en scan deze (6 locaties). Hierop volgt een meerkeuze vraag. Je geeft antwoord op de vraag door de QR-code op locatie A, B, C, of D te scannen. Hiermee kan je grondstoffen verdienen.</string>
+                                        <string key="content">Zoek een locatie met een Q-que-le-QR-code en scan deze (6 locaties). Hierop volgt een meerkeuze vraag. Je geeft antwoord op de vraag door de QR-code op locatie A, B, C, of D te scannen. Hiermee kan je grondstoffen verdienen.</string>
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
                                             <font key="NSFont" size="13.333333015441895" name="ArialMT"/>
@@ -442,13 +442,25 @@ Cg
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Huidige ronde:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5OG-7G-4mS">
-                                <rect key="frame" x="26" y="198" width="113" height="21"/>
+                                <rect key="frame" x="26" y="226" width="113" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ronde 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyv-RJ-Aol">
-                                <rect key="frame" x="243" y="198" width="61" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="....." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyv-RJ-Aol">
+                                <rect key="frame" x="280" y="226" width="24" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jll-Fx-aYT">
+                                <rect key="frame" x="26" y="197" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BZ-sg-4Fz">
+                                <rect key="frame" x="290" y="197" width="14" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -461,12 +473,16 @@ Cg
                             <constraint firstItem="eEy-Nj-l2W" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="10" id="FSk-z5-0gJ"/>
                             <constraint firstItem="ji0-54-nUX" firstAttribute="top" secondItem="eEy-Nj-l2W" secondAttribute="bottom" constant="7.5" id="Fkj-Eb-uF8"/>
                             <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="ji0-54-nUX" secondAttribute="bottom" id="I1A-eg-gf5"/>
+                            <constraint firstItem="jll-Fx-aYT" firstAttribute="top" secondItem="B9V-sy-p02" secondAttribute="bottom" constant="7" id="Mea-rV-SsU"/>
                             <constraint firstItem="B9V-sy-p02" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="MkN-on-bee"/>
                             <constraint firstItem="pHm-6t-L56" firstAttribute="baseline" secondItem="eEy-Nj-l2W" secondAttribute="baseline" id="RJ5-KK-i26"/>
                             <constraint firstAttribute="leadingMargin" secondItem="KQZ-1w-vlD" secondAttribute="leading" id="SZI-mn-nuB"/>
                             <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="YJL-q4-jOA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ji0-54-nUX" secondAttribute="trailing" id="a6c-9F-PcW"/>
-                            <constraint firstItem="5OG-7G-4mS" firstAttribute="top" secondItem="B9V-sy-p02" secondAttribute="bottom" constant="8" id="bbq-7L-cgn"/>
+                            <constraint firstItem="jll-Fx-aYT" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="10" id="bVD-CF-mcK"/>
+                            <constraint firstItem="5OG-7G-4mS" firstAttribute="top" secondItem="jll-Fx-aYT" secondAttribute="bottom" constant="8" id="dii-sq-shO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0BZ-sg-4Fz" secondAttribute="trailing" id="f2b-0z-AXn"/>
+                            <constraint firstItem="jll-Fx-aYT" firstAttribute="baseline" secondItem="0BZ-sg-4Fz" secondAttribute="baseline" id="f9v-OO-GWN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="qyv-RJ-Aol" secondAttribute="trailing" id="frJ-UN-TxB"/>
                             <constraint firstItem="qyv-RJ-Aol" firstAttribute="baseline" secondItem="5OG-7G-4mS" secondAttribute="baseline" id="ta1-c3-xZz"/>
                             <constraint firstItem="5OG-7G-4mS" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="10" id="xE7-Gi-xoU"/>
@@ -477,7 +493,10 @@ Cg
                     </view>
                     <tabBarItem key="tabBarItem" title="Overzicht" image="map" selectedImage="map" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="gameExplanation" destination="ji0-54-nUX" id="rVx-0P-89n"/>
                         <outlet property="roundEnd" destination="pHm-6t-L56" id="u9x-07-gXn"/>
+                        <outlet property="roundName" destination="qyv-RJ-Aol" id="PF7-lQ-Zkr"/>
+                        <outlet property="teamName" destination="0BZ-sg-4Fz" id="a2b-bD-Jlp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>

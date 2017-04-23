@@ -9,10 +9,13 @@
 import Foundation
 
 class StatusResponse: NSObject {
+    var teamActive: Bool?
     var activeRound: String?
     var roundExpiry: Date?
     var resourceList: [Resource] = []
     var questionList: [Question] = []
+    var teamName: String?
+    var teamId: String?
     
     override init() {
         super.init()
@@ -20,6 +23,9 @@ class StatusResponse: NSObject {
     
     init?(dict: NSDictionary) {
         self.activeRound = dict["activeRound"] as? String
+        self.teamActive = dict["teamActive"] as? Bool
+        self.teamName = dict["teamName"] as? String
+        self.teamId = dict["teamId"] as? String
         
         if let timestamp = dict["roundExpiry"] {
             self.roundExpiry = Date(timeIntervalSince1970: TimeInterval(timestamp as! Int))
