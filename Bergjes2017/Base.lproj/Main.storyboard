@@ -640,7 +640,7 @@ Cg
         <!--New Chicken View Controller-->
         <scene sceneID="xCH-jL-RvP">
             <objects>
-                <viewController id="vO6-Em-kWi" customClass="NewChickenViewController" customModule="Bergjes2017" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newchicken" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vO6-Em-kWi" customClass="NewChickenViewController" customModule="Bergjes2017" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dky-pC-P5E"/>
                         <viewControllerLayoutGuide type="bottom" id="EFA-39-cFt"/>
@@ -709,7 +709,7 @@ Cg
                                 <rect key="frame" x="26" y="481" width="268" height="30"/>
                                 <state key="normal" title="Nieuwe Kip!"/>
                                 <connections>
-                                    <segue destination="vO6-Em-kWi" kind="presentation" id="VAY-BC-QmV"/>
+                                    <action selector="newChickenSelected:" destination="3Wk-OV-BDe" eventType="touchUpInside" id="YfQ-Lf-Itb"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VCi-fH-bkJ">
@@ -781,6 +781,7 @@ Cg
                     </view>
                     <tabBarItem key="tabBarItem" title="Grondstoffen" image="resources" selectedImage="resources" id="6Mm-qv-Gtn"/>
                     <connections>
+                        <outlet property="newChickenButton" destination="5oJ-Ue-Awt" id="QRI-iG-fwY"/>
                         <outlet property="resourcesTableView" destination="VCi-fH-bkJ" id="D4j-tC-UgR"/>
                     </connections>
                 </viewController>

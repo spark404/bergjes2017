@@ -11,6 +11,7 @@ import UIKit
 
 class GrondstoffenViewController: UIViewController {
     @IBOutlet weak var resourcesTableView: UITableView!
+    @IBOutlet weak var newChickenButton: UIButton!
     
     var resources: [Resource]?
     
@@ -30,6 +31,7 @@ class GrondstoffenViewController: UIViewController {
             self.resources = response.resourceList
             DispatchQueue.main.async {
                 self.resourcesTableView.reloadData()
+                self.newChickenButton!.isEnabled = self.chickenPossible();
                 spinnerController.deactivateSpinner()
             }
         }) { (error: NSError) in
@@ -40,6 +42,49 @@ class GrondstoffenViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true)
             }
+        }
+    }
+    
+    func chickenPossible() -> Bool {
+        let grainAmount = findResourceByType(resourceType: "GRAIN")?.amount
+        let woodAmount = findResourceByType(resourceType: "WOOD")?.amount
+        let fenceAmount = findResourceByType(resourceType: "FENCE")?.amount
+        let eggAmount = findResourceByType(resourceType: "EGG")?.amount
+        
+        if (eggAmount! >= 1 && woodAmount! >= 2 && fenceAmount! >= 3 && grainAmount! >= 5) {
+            return true;
+        }
+        
+        return false;
+    }
+    
+    func findResourceByType(resourceType: String) -> Resource? {
+        for resource in self.resources! {
+            if (resource.type == resourceType) {
+                return resource
+            }
+        }
+        return nil;
+    }
+    
+    @IBAction func newChickenSelected(_ sender: Any) {
+        if (chickenPossible()) {
+            let request = NewChickenRequest()
+            request.executeRequest(completionHandler: { (response) in
+                DispatchQueue.main.async {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let controller = storyboard.instantiateViewController(withIdentifier: "newchicken") as! ResultViewController
+                    self.present(controller, animated: true)
+                }
+            }, failedHandler: { (error) in
+                print("\(error)")
+                DispatchQueue.main.async {
+                    let errorMessagee = error.userInfo["errorMessage"] ?? error.userInfo["Message"] ?? "Onbekende fout"
+                    let alert = UIAlertController(title: "Oeps", message: errorMessagee as? String, preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true)
+                }
+            })
         }
     }
     
