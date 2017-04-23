@@ -523,7 +523,7 @@ Cg
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="... momentje geduld even de scanner aanzetten" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
-                                <rect key="frame" x="26" y="313" width="268" height="34"/>
+                                <rect key="frame" x="26" y="313" width="268" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -568,7 +568,7 @@ Cg
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="... maar met deze QRCode kunnen we dus helemaal niks" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSI-fA-Ijd">
-                                <rect key="frame" x="26" y="323" width="268" height="34"/>
+                                <rect key="frame" x="26" y="323" width="268" height="33.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -703,7 +703,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dc9-vb-tyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1763" y="1019"/>
+            <point key="canvasLocation" x="1551" y="1019"/>
         </scene>
         <!--Grondstoffen-->
         <scene sceneID="vkx-yJ-9HP">
@@ -756,7 +756,7 @@ Cg
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huk-2Y-Okf">
-                                                    <rect key="frame" x="218" y="9" width="42" height="24"/>
+                                                    <rect key="frame" x="218" y="8" width="42" height="24"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="42" id="hP6-7d-ZnQ"/>
                                                     </constraints>
@@ -834,7 +834,7 @@ Cg
                                         <rect key="frame" x="0.0" y="28" width="268" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S15-6a-MTW" id="3Oj-Q6-3Qd">
-                                            <rect key="frame" x="0.0" y="0.0" width="268" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="268" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MountainSplashscreen" translatesAutoresizingMaskIntoConstraints="NO" id="OLv-tl-sVy">

@@ -120,7 +120,7 @@ extension GrondstoffenViewController: UITableViewDataSource {
             cell.resourceDescription?.text = "Graan"
             cell.resourceImage?.image = #imageLiteral(resourceName: "grain")
         case "BRICK":
-            cell.resourceDescription?.text = "Stenen"
+            cell.resourceDescription?.text = "Bakstenen"
             cell.resourceImage?.image = #imageLiteral(resourceName: "brick")
         case "CHICKEN":
             cell.resourceDescription?.text = "Kippen"

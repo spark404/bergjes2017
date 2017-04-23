@@ -17,7 +17,7 @@ class Resource: NSObject {
         self.amount = amount
     }
     
-    func getDecriptionForResource() -> String! {
+    func getDescriptionForResource() -> String! {
         switch self.type {
         case "EGG":
             return "Ei"
@@ -29,8 +29,8 @@ class Resource: NSObject {
             return "Kip"
         case "GRAIN":
             return "Graan"
-        case "ROCK":
-            return "Steen"
+        case "BRICK":
+            return "Baksteen"
         default:
             return "Iets dat nog geen naam heeft."
         }

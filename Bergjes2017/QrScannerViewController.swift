@@ -80,7 +80,7 @@ extension QrScannerViewController: QrCodeResultDelegate {
                 let controller = storyboard.instantiateViewController(withIdentifier: "result") as! ResultViewController
                 controller.result = "NEWLOCATION"
                 controller.resultMessage = "Nieuwe vraag; \"\(response.question!)\".\n\nDeze kan je beantwoorden via het \"vragen\" tabje.\n\n" +
-                    "Deze locatie heeft op dit moment de grondstof \"\(response.resource?.getDecriptionForResource()! ?? "....")\""
+                    "Deze locatie heeft op dit moment de grondstof \"\(response.resource?.getDescriptionForResource()! ?? "....")\""
                 controller.delegate = self
                 self.present(controller, animated: true)
             }
