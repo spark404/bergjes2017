@@ -174,7 +174,7 @@ extension GrondstoffenViewController: UITableViewDataSource {
         default:
             cell.resourceDescription?.text = "Wut Wut Wut..."
         }
-        cell.resourceCount?.text = "\(resources![indexPath.row].amount!)"
+        cell.resourceCount?.text = "\(resourceList[indexPath.row].amount!)"
 
         return cell
     }
