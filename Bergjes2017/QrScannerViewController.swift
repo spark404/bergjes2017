@@ -66,8 +66,39 @@ extension QrScannerViewController: QrCodeResultDelegate {
         }
         
         let map = url.queryItems;
+        let scanCode = map["bergjes2017"]!
         
-        let locationRequest = LocationRequest(qrcodeText: map["bergjes2017"]!)
+        if (scanCode == "BETRADE") {
+            let supplierId = map["from"]
+            let suppliedResource = Resource(type: map["resource"]!, amount: Int(map["amount"]!)!)
+            tradeRequest(supplierTeamId: supplierId!, suppliedResource: suppliedResource!)
+        } else {
+            locationRequest(locationCode: scanCode)
+        }
+        
+    }
+    
+    func tradeRequest(supplierTeamId: String, suppliedResource: Resource) {
+        let tradeRequest = TradeRequest(teamId: supplierTeamId, resource: suppliedResource)
+        tradeRequest.executeRequest(completionHandler: { (response: TradeResponse) in
+            DispatchQueue.main.async {
+                // All went well, switch to resources tab
+                self.tabBarController?.selectedIndex = 2
+            }
+        }) { (error: NSError) in
+            print("\(error)")
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Oeps", message: error.userInfo["errorMessage"] as? String, preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: { (alert: UIAlertAction!) in
+                    self.qrscannerController.startSession()
+                }))
+                self.present(alert, animated: true)
+            }
+        }
+    }
+    
+    func locationRequest(locationCode: String) {
+        let locationRequest = LocationRequest(qrcodeText: locationCode)
         locationRequest.executeRequest(completionHandler: {
             (response: LocationResponse) -> Void in
             DispatchQueue.main.async {
@@ -75,12 +106,12 @@ extension QrScannerViewController: QrCodeResultDelegate {
                     self.wrongScan(message: "... maar volgens onze gegevens ben je hier al geweest deze ronde")
                     return
                 }
-            
+                
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let controller = storyboard.instantiateViewController(withIdentifier: "result") as! ResultViewController
                 controller.result = "NEWLOCATION"
                 controller.resultMessage = "Nieuwe vraag; \"\(response.question!)\".\n\nDeze kan je beantwoorden via het \"vragen\" tabje.\n\n" +
-                    "Deze locatie heeft op dit moment de grondstof \"\(response.resource?.getDescriptionForResource()! ?? "....")\""
+                "Deze locatie heeft op dit moment de grondstof \"\(response.resource?.getDescriptionForResource()! ?? "....")\""
                 controller.delegate = self
                 self.present(controller, animated: true)
             }

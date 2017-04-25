@@ -14,6 +14,7 @@ class GrondstoffenViewController: UIViewController {
     @IBOutlet weak var newChickenButton: UIButton!
     
     var resources: [Resource]?
+    var teamIdentifier: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class GrondstoffenViewController: UIViewController {
         let statusRequest = StatusRequest()
         statusRequest.executeRequest(completionHandler: { (response: StatusResponse) in
             self.resources = response.resourceList
+            self.teamIdentifier = response.teamId
             DispatchQueue.main.async {
                 self.resourcesTableView.reloadData()
                 self.newChickenButton!.isEnabled = self.chickenPossible();
@@ -94,11 +96,53 @@ class GrondstoffenViewController: UIViewController {
         }
     }
     
+    func getResourcesForSection(section: Int) -> [Resource] {
+        return self.resources?.filter({ (res) -> Bool in
+            if (section == 0) {
+                return !(res.type == "BRICK" || res.type == "CHICKEN")
+            } else if (section == 1) {
+                return res.type == "BRICK"
+            } else if (section == 2) {
+                return res.type == "CHICKEN"
+            }
+            return false;
+        }) ?? []
+    }
+    
+    func getResourceForIndexPath(indexPath: IndexPath) -> Resource? {
+        let resourceList = getResourcesForSection(section: indexPath.section)
+        if (resourceList.indices.contains(indexPath.row)) {
+            return resourceList[indexPath.row]
+        } else {
+            return nil
+        }
+    }
+    
 }
 
 extension GrondstoffenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40.0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "trade") as! TradeViewController
+        controller.resource = getResourceForIndexPath(indexPath: indexPath)
+        controller.teamIdentifier = self.teamIdentifier
+        self.present(controller, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        if (indexPath.section != 2) {
+            if ((getResourceForIndexPath(indexPath: indexPath)?.amount)! > 0) {
+                return indexPath
+            } else {
+                return nil
+            }
+        } else {
+            return nil
+        }
     }
 }
 
@@ -106,7 +150,9 @@ extension GrondstoffenViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:ResourceTableViewCell = self.resourcesTableView.dequeueReusableCell(withIdentifier: "resourceCell")! as! ResourceTableViewCell
         
-        switch resources![indexPath.row].type! {
+        let resourceList = getResourcesForSection(section: indexPath.section)
+        
+        switch resourceList[indexPath.row].type! {
         case "EGG":
             cell.resourceDescription?.text = "Eieren"
             cell.resourceImage?.image = #imageLiteral(resourceName: "egg")
@@ -128,13 +174,30 @@ extension GrondstoffenViewController: UITableViewDataSource {
         default:
             cell.resourceDescription?.text = "Wut Wut Wut..."
         }
-        
         cell.resourceCount?.text = "\(resources![indexPath.row].amount!)"
 
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (self.resources ?? []).count;
+        return getResourcesForSection(section: section).count
     }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Grondstoffen"
+        case 1:
+            return "Overige"
+        case 2:
+            return "Kippen"
+        default:
+            return "..."
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3;
+    }
+    
 }
