@@ -480,7 +480,7 @@ Op het tabblad </string>
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
-                                    <fragment content=" zie je welke grondstoffen je al verzameld samen met het aantal bakstenen en kippen. Selecteer de knop ">
+                                    <fragment content=" zie je welke grondstoffen je al verzameld hebt samen met het aantal bakstenen en kippen. Selecteer de knop ">
                                         <attributes>
                                             <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <font key="NSFont" size="13.333" name="ArialMT"/>

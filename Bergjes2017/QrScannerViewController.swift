@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import CoreLocation
 
 class QrScannerViewController: UIViewController {
     @IBOutlet weak var errorMessage: UILabel!
     
-    let qrscannerController = QrScannerController()
+    let qrscannerController = LocationAwareQrScannerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,8 +54,8 @@ class QrScannerViewController: UIViewController {
 
 }
 
-extension QrScannerViewController: QrCodeResultDelegate {
-    func qrCodeFound(qrValue: String) {
+extension QrScannerViewController: LocationAwareQrCodeResultDelegate {
+    func qrCodeFound(qrValue: String, location: CLLocation?) {
         if !qrValue.hasPrefix("http://www.fladderen.nl") {
             wrongScan(message: "... maar met deze QRCode kunnen we dus helemaal niks")
             return
@@ -73,7 +74,7 @@ extension QrScannerViewController: QrCodeResultDelegate {
             let suppliedResource = Resource(type: map["resource"]!, amount: Int(map["amount"]!)!)
             tradeRequest(supplierTeamId: supplierId!, suppliedResource: suppliedResource!)
         } else {
-            locationRequest(locationCode: scanCode)
+            locationRequest(locationCode: scanCode, currentLocation: location)
         }
         
     }
@@ -97,8 +98,10 @@ extension QrScannerViewController: QrCodeResultDelegate {
         }
     }
     
-    func locationRequest(locationCode: String) {
+    func locationRequest(locationCode: String, currentLocation: CLLocation?) {
         let locationRequest = LocationRequest(qrcodeText: locationCode)
+        locationRequest.location = currentLocation
+        
         locationRequest.executeRequest(completionHandler: {
             (response: LocationResponse) -> Void in
             DispatchQueue.main.async {

@@ -84,10 +84,19 @@ class QrScannerController: NSObject {
 
 extension QrScannerController: AVCaptureMetadataOutputObjectsDelegate {
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!) {
+        guard let qrValue = parseMetadataObjects(metadataObjects: metadataObjects) else {
+            return
+        }
+
+        stopSession()
+        delegate?.qrCodeFound(qrValue: qrValue)
+    }
+    
+    func parseMetadataObjects(metadataObjects: [Any]!) -> String? {
         // Check if the metadataObjects array is not nil and it contains at least one object.
         if metadataObjects == nil || metadataObjects.count == 0 {
             qrCodeFrameView?.frame = CGRect.zero
-            return
+            return nil
         }
         
         // Get the metadata object.
@@ -98,12 +107,9 @@ extension QrScannerController: AVCaptureMetadataOutputObjectsDelegate {
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj as AVMetadataMachineReadableCodeObject) as! AVMetadataMachineReadableCodeObject
             qrCodeFrameView?.frame = barCodeObject.bounds;
             
-            if metadataObj.stringValue != nil {
-                stopSession()
-                delegate?.qrCodeFound(qrValue: metadataObj.stringValue)
-            }
+            return metadataObj.stringValue
         }
+        
+        return nil
     }
-    
-
 }

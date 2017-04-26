@@ -8,9 +8,11 @@
 
 import Foundation
 import AWSLambda
+import CoreLocation
 
 class LocationRequest: LambdaBase {
     var qrcodeText: String
+    var location: CLLocation?
     
     init(qrcodeText: String) {
         self.qrcodeText = qrcodeText
@@ -20,7 +22,10 @@ class LocationRequest: LambdaBase {
     
     func executeRequest(completionHandler: @escaping (_ response: LocationResponse) -> Void, failedHandler: @escaping (_ error: NSError) -> Void) {
         
-        let jsonObject: [String: Any] = ["locationCode" : qrcodeText]
+        var jsonObject: [String: Any] = ["locationCode" : qrcodeText]
+        if ((location) != nil) {
+            jsonObject = ["locationCode" : qrcodeText, "latitude" : location!.coordinate.latitude, "longitude": location!.coordinate.longitude, "accuracy": location!.horizontalAccuracy]
+        }
         
         lambdaInvoker
             .invokeFunction("ScannedLocationRequest", jsonObject: jsonObject)

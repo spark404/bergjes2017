@@ -41,6 +41,7 @@
 		9A92D4F71EACE2DD00018F99 /* ErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A92D4F61EACE2DD00018F99 /* ErrorController.swift */; };
 		9A953FF11EAFDEC200DFD386 /* TradeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A953FF01EAFDEC200DFD386 /* TradeResponse.swift */; };
 		9A953FF31EAFDF3000DFD386 /* TradeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A953FF21EAFDF3000DFD386 /* TradeRequest.swift */; };
+		9A953FF71EB1275C00DFD386 /* LocationAwareQrScannerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A953FF61EB1275C00DFD386 /* LocationAwareQrScannerController.swift */; };
 		9AF67FF61E9936D100D42E17 /* NewChickenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF67FF51E9936D100D42E17 /* NewChickenViewController.swift */; };
 		9AF67FF91E99392800D42E17 /* GrondstoffenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF67FF81E99392800D42E17 /* GrondstoffenViewController.swift */; };
 		9AF67FFD1E993CF500D42E17 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AF67FFB1E993CF500D42E17 /* Fabric.framework */; };
@@ -107,6 +108,7 @@
 		9A92D4F61EACE2DD00018F99 /* ErrorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorController.swift; sourceTree = "<group>"; };
 		9A953FF01EAFDEC200DFD386 /* TradeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradeResponse.swift; sourceTree = "<group>"; };
 		9A953FF21EAFDF3000DFD386 /* TradeRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TradeRequest.swift; sourceTree = "<group>"; };
+		9A953FF61EB1275C00DFD386 /* LocationAwareQrScannerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAwareQrScannerController.swift; sourceTree = "<group>"; };
 		9AF67FF51E9936D100D42E17 /* NewChickenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewChickenViewController.swift; sourceTree = "<group>"; };
 		9AF67FF81E99392800D42E17 /* GrondstoffenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrondstoffenViewController.swift; sourceTree = "<group>"; };
 		9AF67FFB1E993CF500D42E17 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				9A83D8A81E9FF87100EEE2F1 /* QrScannerController.swift */,
 				9A83D8BB1EA167A400EEE2F1 /* SpinnerController.swift */,
 				9A92D4F61EACE2DD00018F99 /* ErrorController.swift */,
+				9A953FF61EB1275C00DFD386 /* LocationAwareQrScannerController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				9A953FF31EAFDF3000DFD386 /* TradeRequest.swift in Sources */,
 				9A83D8B31EA0151D00EEE2F1 /* LocationResponse.swift in Sources */,
 				9A83D8C71EA3B13C00EEE2F1 /* ScanAnswerViewController.swift in Sources */,
+				9A953FF71EB1275C00DFD386 /* LocationAwareQrScannerController.swift in Sources */,
 				9A83D8CB1EA4C23F00EEE2F1 /* AnswerResponse.swift in Sources */,
 				9A953FF11EAFDEC200DFD386 /* TradeResponse.swift in Sources */,
 				9A83D8C01EA180C600EEE2F1 /* QuestionsTableViewCell.swift in Sources */,
