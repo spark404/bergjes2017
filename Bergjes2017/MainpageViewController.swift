@@ -11,15 +11,11 @@ import UIKit
 class MainpageViewController: UIViewController {
 
     @IBOutlet weak var teamName: UILabel!
-    @IBOutlet weak var roundEnd: UILabel!
-    @IBOutlet weak var roundName: UILabel!
     @IBOutlet weak var gameExplanation: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         gameExplanation.isHidden = true
-        
-        // var timer = NSTimer.scheduledTimerWithTimeInterval(0.4, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,11 +37,6 @@ class MainpageViewController: UIViewController {
                 }
                 
                 self.gameExplanation.isHidden = false
-                
-                let formatter = DateFormatter()
-                formatter.dateFormat = "HH:mm:ss"
-                self.roundEnd.text = formatter.string(from: response.roundExpiry!)
-                self.roundName.text = self.getRoundName(currentRound: response.activeRound)
                 self.teamName.text = response.teamName
             }
         }) { (error: NSError) in
